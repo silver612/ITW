@@ -1,0 +1,21 @@
+<%- include("../partials/head.ejs") %>
+
+<div >
+    <h2>All Interviews</h2>
+
+    <% if (interviews.length > 0) { %>
+      <% interviews.forEach(interview => { %>
+        <a href="/interviews/<%= interview._id %>">
+          <h3><%= interview.title %></h3>
+          <p><%= interview.year %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no interviews to display...</p>
+    <% } %>
+    
+    <a href="/interviews/share" class='btn pgend'>share</a>
+
+  </div>
+
+  <%- include("../partials/foot.ejs") %>

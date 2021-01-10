@@ -1,0 +1,15 @@
+<%- include("../partials/head.ejs") %>
+
+<div >
+  <form action="/interviews" method="post">
+    <label for="title">Company name:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="year">Interview year:</label>
+    <input type="text" id="year" name="year" required>
+    <label for="body">Interview experience:</label>
+    <textarea id="body" name="body" required></textarea>
+    <button>Submit</button>
+  </form>
+</div>
+
+<%- include("../partials/foot.ejs") %>

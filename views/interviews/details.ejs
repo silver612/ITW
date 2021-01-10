@@ -1,0 +1,26 @@
+<%- include("../partials/head") %>
+
+  <div>
+    <h2><%= interview.title %></h2>
+    <h4><%= interview.year %></h4>
+    <div class="content">
+      <p><%= interview.body %></p>
+    </div>
+    <a class="delete" data-doc="<%= interview._id %>">delete</a>
+  </div>
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/interviews/${trashcan.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
+
+<%- include("../partials/foot") %>
