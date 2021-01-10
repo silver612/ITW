@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT | <%= title%></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <h1><a href="/">Interview Tracker</a></h1>
+    <ul>
+      <% if (user) {%>
+        <li id='nav1'>Welcome, <%- user.username %></li>
+        <li class='btn'><a href="/logout">Log out</a></li>
+      <% } else if(title !== 'login' && title !== 'signup') { %>
+        <li id='nav1'><a href="/login">Log in</a></li>
+        <li class='btn'><a href="/signup">Sign up</a></li>
+      <% } %>
+    </ul>
+  </nav>
+  
