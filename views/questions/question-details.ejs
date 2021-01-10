@@ -1,0 +1,27 @@
+<%- include("../partials/head") %>
+
+  <div>
+    <h2><%= question.topic.title %></h2>
+    <div class="content">
+      <p><%= question.content %></p>
+    </div>
+    <a class="delete" data-ques="<%= question._id %>">DELETE</a>
+    <br>
+    <a href='/programming'>All Topics</a>
+  </div>
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/programming/question/${trashcan.dataset.ques}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
+
+<%- include("../partials/foot") %>

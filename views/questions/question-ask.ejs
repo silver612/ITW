@@ -1,0 +1,18 @@
+<%- include("../partials/head.ejs") %>
+
+<div >
+  <form action="/programming" method="post">
+    <label for="title">Question topic:</label>
+    <select id="title" name="title" required>
+    <% topics.forEach(topic => { %>
+      <option value='<%= topic.title %>''><%= topic.title %></option>
+    <% }) %>
+    </select>
+    <p id='formfield'> Cannot find your topic? <a href="/programming/create">Create new topic</a></p>
+    <label for="content">Your Question?:</label>
+    <textarea id="content" name="content" required></textarea>
+    <button>Submit</button>
+  </form>
+</div>
+
+<%- include("../partials/foot.ejs") %>

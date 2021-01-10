@@ -1,0 +1,11 @@
+<%- include("../partials/head.ejs") %>
+
+<div >
+  <form action="/programming/create" method="post">
+    <label for="title">New topic:</label>
+    <input type='text' id="title" name="title" required></input>
+    <button>Submit</button>
+  </form>
+</div>
+
+<%- include("../partials/foot.ejs") %>

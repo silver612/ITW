@@ -1,0 +1,22 @@
+<%- include("../partials/head.ejs") %>
+
+<div class='content'>
+    <h2><%= topic%>: Questions</h2>
+
+    <% if (questions.length > 0) { %>
+      <% questions.forEach(question => { %>
+        <a href="/programming/question/<%= question._id %>">
+          <p><%= question.content %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no questions to display...</p>
+    <% } %>
+    
+    <a href="/programming" class="btn pgend"> View All Topics</a>
+    <br>
+    <a href="/programming/ask" class='btn pgend'>Ask a Question</a>
+
+  </div>
+
+  <%- include("../partials/foot.ejs") %>
