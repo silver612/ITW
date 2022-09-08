@@ -4,6 +4,7 @@
   <form action="/programming" method="post">
     <label for="title">Question topic:</label>
     <select id="title" name="title" required>
+      <option value=''>-Select-</option>
     <% topics.forEach(topic => { %>
       <option value='<%= topic.title %>''><%= topic.title %></option>
     <% }) %>

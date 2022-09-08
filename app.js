@@ -11,7 +11,7 @@ const interviewRoutes = require('./routes/interviewRoutes');
 const programmingRoutes = require('./routes/programmingRoutes');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
-const dbURL = 'mongodb+srv://admin2:adminlock2@cluster0.hmfbb.mongodb.net/ITW';//?retryWrites=true&w=majority'
+const dbURL = 'mongodb+srv://admin2:EsTynB9fODY3MwPP@cluster0.hmfbb.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(dbURL,{useNewUrlParser: true, useUnifiedTopology: true})
 .then((result) => {
   console.log("connected to db");
